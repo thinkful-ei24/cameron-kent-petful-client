@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 export default class Pet extends Component {
   render() {
+    if (!this.props.petToAdopt) {
+      return <section>Loading...</section>;
+    }
     return (
       <section>
         <header>Dog: {this.props.petToAdopt.name}</header>

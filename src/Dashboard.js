@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Pet from './components/Pet';
+import { fetchCat, fetchDog } from './actions/index';
 
 
 class Dashboard extends Component {
+  componentDidMount() {
+    this.props.dispatch(fetchCat());
+    this.props.dispatch(fetchDog());
+  }
+
   onAdoptPet(e) {
     console.log(e);
   }
