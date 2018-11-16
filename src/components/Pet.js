@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 
 class Pet extends Component {
   render() {
+    console.log(this.props);
     if (!this.props.petToAdopt) {
       return <section>Loading...</section>;
     }
+
     return (
       <section>
         <header>
