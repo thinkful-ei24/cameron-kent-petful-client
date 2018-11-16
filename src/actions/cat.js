@@ -27,7 +27,6 @@ export const fetchCatError= (err) => {
 
 
 export const fetchCat = () => dispatch => {
-  console.log('fetching');
   dispatch(fetchCatRequest());
   return fetch(`${API_BASE_URL}/api/cat`)
     .then(res => normalizeResponseErrors(res))
@@ -37,7 +36,6 @@ export const fetchCat = () => dispatch => {
 };
 
 export const deleteCat = () => dispatch => {
-  console.log('running');
   dispatch(fetchCatRequest());
   return fetch(`${API_BASE_URL}/api/cat`, {
     method: 'DELETE'

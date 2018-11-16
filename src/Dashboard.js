@@ -10,10 +10,6 @@ class Dashboard extends Component {
     this.props.dispatch(fetchDog());
   }
 
-  // onAdoptPet(e) {
-  //   console.log(e);
-  // }
-
   render() {
     return (
       <div>
