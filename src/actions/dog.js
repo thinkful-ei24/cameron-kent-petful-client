@@ -14,7 +14,7 @@ export const FETCH_DOG_SUCCESS= 'FETCH_DOG_SUCCESS';
 export const fetchDogSuccess= (dogObj) => {
   return ({
     type: FETCH_DOG_SUCCESS,
-    dog: dogObj
+    data: dogObj
   }) ; 
 };
 

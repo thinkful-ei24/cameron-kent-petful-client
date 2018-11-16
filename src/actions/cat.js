@@ -14,7 +14,7 @@ export const FETCH_CAT_SUCCESS= 'FETCH_CAT_SUCCESS';
 export const fetchCatSuccess= (catObj) => {
   return ({
     type: FETCH_CAT_SUCCESS,
-    cat: catObj
+    data: catObj
   }) ; 
 };
 
