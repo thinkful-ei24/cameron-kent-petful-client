@@ -1,39 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Pet from './components/Pet';
 
 
 class Dashboard extends Component {
+  onAdoptPet(e) {
+    console.log(e);
+  }
+
   render() {
     return (
       <div>
-        <section className="dog-to-adopt">
-          <header>Dog: {this.props.dogToAdopt.name}</header>
-          <main>
-            <dl>
-              <dt><img src={this.props.dogToAdopt.imageURL} /></dt>
-              <dd>{this.props.dogToAdopt.imageDescription}</dd>
-              <dt>{this.props.dogToAdopt.sex}</dt>
-              <dt>{this.props.dogToAdopt.age}</dt>
-              <dt>{this.props.dogToAdopt.breed}</dt>
-              <dt>{this.props.dogToAdopt.story}</dt>
-            </dl>
-          </main>
-          <button>Adopt!</button>
-        </section>
-        <section className="cat-to-adopt">
-          <header>Cat: {this.props.catToAdopt.name}</header>
-          <main>
-            <dl>
-              <dt><img src={this.props.catToAdopt.imageURL} /></dt>
-              <dd>{this.props.catToAdopt.imageDescription}</dd>
-              <dt>{this.props.catToAdopt.sex}</dt>
-              <dt>{this.props.catToAdopt.age}</dt>
-              <dt>{this.props.catToAdopt.breed}</dt>
-              <dt>{this.props.catToAdopt.story}</dt>
-            </dl>
-            <button>Adopt!</button>
-          </main>
-        </section>
+        <Pet petToAdopt={this.props.dogToAdopt} onAdoptPet={this.onAdoptPet}/>
+        <Pet petToAdopt={this.props.catToAdopt} onAdoptPet={this.onAdoptPet}/>
       </div>
     );
   }
