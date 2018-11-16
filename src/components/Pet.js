@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class Pet extends Component {
+class Pet extends Component {
   render() {
     if (!this.props.petToAdopt) {
       return <section>Loading...</section>;
     }
     return (
       <section>
-        <header>Dog: {this.props.petToAdopt.name}</header>
+        <header>Name: {this.props.petToAdopt.name}</header>
         <main>
           <dl>
             <dt><img src={this.props.petToAdopt.imageURL} /></dt>
@@ -18,8 +19,10 @@ export default class Pet extends Component {
             <dt>{this.props.petToAdopt.story}</dt>
           </dl>
         </main>
-        <button onClick={e => this.props.onAdoptPet(e)}>Adopt!</button>
+        <button onClick={() => this.props.dispatch(this.props.onAdoptPet())}>Adopt!</button>
       </section>
     );
   }
 }
+
+export default connect()(Pet);
