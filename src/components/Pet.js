@@ -8,15 +8,16 @@ class Pet extends Component {
     }
     return (
       <section>
-        <header>Name: {this.props.petToAdopt.name}</header>
+        <header>
+          <img src={this.props.petToAdopt.imageURL} alt={this.props.petToAdopt.imageDescription} />
+          <h2><b>Name:</b> {this.props.petToAdopt.name}</h2>
+        </header>
         <main>
           <dl>
-            <dt><img src={this.props.petToAdopt.imageURL} /></dt>
-            <dd>{this.props.petToAdopt.imageDescription}</dd>
-            <dt>{this.props.petToAdopt.sex}</dt>
-            <dt>{this.props.petToAdopt.age}</dt>
-            <dt>{this.props.petToAdopt.breed}</dt>
-            <dt>{this.props.petToAdopt.story}</dt>
+            <dt><b>Gender: </b>{this.props.petToAdopt.sex}</dt>
+            <dt><b>Age:</b> {this.props.petToAdopt.age}</dt>
+            <dt><b>Breed:</b> {this.props.petToAdopt.breed}</dt>
+            <dt><b>{this.props.petToAdopt.name}'s Story:</b> {this.props.petToAdopt.story}</dt>
           </dl>
         </main>
         <button onClick={() => this.props.dispatch(this.props.onAdoptPet())}>Adopt!</button>

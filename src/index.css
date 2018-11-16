@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.dashboard {
+  text-align: center;
+}
+
+.pets {
+  display: flex;
+  justify-content: space between
+}
+
+img {
+  width: 45%;
+}

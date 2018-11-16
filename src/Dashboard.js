@@ -12,9 +12,12 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
-        <Pet petToAdopt={this.props.dogToAdopt} onAdoptPet={deleteDog}/>
-        <Pet petToAdopt={this.props.catToAdopt} onAdoptPet={deleteCat}/>
+      <div className="dashboard">
+        <h1>Here are the pets for adoption</h1>
+        <div className="pets">
+          <Pet petToAdopt={this.props.dogToAdopt} onAdoptPet={deleteDog}/>
+          <Pet petToAdopt={this.props.catToAdopt} onAdoptPet={deleteCat}/>
+        </div>
       </div>
     );
   }
